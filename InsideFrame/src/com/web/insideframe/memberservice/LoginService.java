@@ -1,4 +1,4 @@
-package com.web.insideframe.service;
+package com.web.insideframe.memberservice;
 
 import com.web.insideframe.common.DaoFactory;
 import com.web.insideframe.memberdao.MemberDAO;

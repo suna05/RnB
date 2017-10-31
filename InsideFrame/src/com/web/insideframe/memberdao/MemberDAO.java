@@ -82,4 +82,19 @@ public class MemberDAO {
 			System.out.println("MemberDAO deleteAll fail");
 		}
 	}
+	public void delete(String email){
+		try {
+			Connection conn=connection.getConnetion();
+			PreparedStatement pstmt=conn.prepareStatement("delete from member where email=?");
+			pstmt.setString(1,email);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("MemberDAO delete fail");
+		}
+	}
 }
