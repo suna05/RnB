@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>회원가입완료</title>
 </head>
 <body>
 	${member.name}님의 회원가입을 축하드립니다.

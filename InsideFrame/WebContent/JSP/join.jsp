@@ -9,14 +9,14 @@
     <body>
         <div>
             <form action="join.do">
-                email:<input type="text" name="email"><br>
-                pw:<input type="text" name="pw"><br>
-                pw confirm:<input type="text" name="pwconfirm"><br>
+                email:<input type="email" name="email"><br>
+                pw:<input type="password" name="pw"><br>
+                pw confirm:<input type="password" name="pwconfirm"><br>
                 name:<input type="text" name="name"><br>
-                sex:<input type="checkbox" name="sex" value="남성">남성
-                     <input type="checkbox" name="sex" value="여성">여성<br>
-                type:<input type="checkbox" name="type" value="감독">감독
-                     <input type="checkbox" name="type" value="감독">배우<br>
+                sex:<input type="radio" name="sex" value="남성">남성
+                     <input type="radio" name="sex" value="여성">여성<br>
+                type:<input type="radio" name="type" value="감독">감독
+                     <input type="radio" name="type" value="감독">배우<br>
                 phone:<input type="text" name="phone"><br>
                 birth:<input type="text" name="birth"><br>
                 height:<input type="text" name="height"><br>

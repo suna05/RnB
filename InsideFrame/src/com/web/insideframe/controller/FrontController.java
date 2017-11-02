@@ -45,6 +45,16 @@ public class FrontController extends HttpServlet {
 			viewPage="joinOk.jsp";
 		}else if(comName.equals("/JSP/joinPage.do")){
 			viewPage="join.jsp";
+		}else if(comName.equals("/JSP/loginPage.do")){
+			viewPage="login.jsp";
+		}else if(comName.equals("/JSP/login.do")){
+			command=new LoginCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
+		}else if(comName.equals("/JSP/logout.do")){
+			command=new LogoutCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
 		}
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);

@@ -5,10 +5,12 @@ import com.web.insideframe.dao.memberdao.MemberDAO;
 import com.web.insideframe.dto.memberdto.MemberDTO;
 
 public class LoginService {
+	DaoFactory df=new DaoFactory();
+	MemberDAO mdao=df.memberDao();
+	
 	public boolean loginCheck(String email,String pw){
 		boolean result=false;
-		DaoFactory df=new DaoFactory();
-		MemberDAO mdao=df.memberDao();
+		
 		MemberDTO mdto=mdao.select(email);
 		if(mdto==null){
 			return result;
@@ -20,5 +22,12 @@ public class LoginService {
 			else return result;
 		}
 		return result;
+	}
+	public MemberDTO loginMember(String email,String pw){
+		MemberDTO mdto=null;
+		if(loginCheck(email,pw)){
+			mdto=mdao.select(email);
+			return mdto;
+		}else return mdto;
 	}
 }
