@@ -39,6 +39,10 @@ public class FrontController extends HttpServlet {
 		String conPath=request.getContextPath();
 		String comName=uri.substring(conPath.length());
 		
+		if(comName.equals("/join.do")){
+			viewPage="join.jsp";
+		}
+		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request,response);
 	}

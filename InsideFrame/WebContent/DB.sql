@@ -9,18 +9,13 @@ email varchar(45) primary key,
 pw varchar(45) not null,
 name varchar(20) not null,
 mtype varchar(20) not null,
-admin number default 0
-);
-
-create table profile(
-profileno number primary key,
-email varchar(45),
-image varchar(100),
-birth varchar(15),
+admin number default 0,
+mimage varchar(100),
+birth varchar(20),
 height number,
 weight number,
-hobby varchar(40),
-phone varchar(15)
+phone varchar(20),
+sex varchar(10)
 );
 
 create table career(
@@ -31,3 +26,46 @@ title varchar(50),
 roll varchar(20),
 cdate varchar(15)
 );
+
+create table movie(
+movieno number primary key,
+mtitle varchar(30) not null,
+movieimage varchar(100),
+director varchar(20) not null,
+actor varchar(50) not null,
+youtubelink varchar(100),
+category varchar(20),
+mdate varchar(20),
+likeno number,
+mcount number
+);
+
+create table board(
+idx number primary key,
+writer varchar(20) not null,
+btitle varchar(100) not null,
+bdate varchar(20) not null,
+btype varchar(20) not null,
+content clob,
+bcount number
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
