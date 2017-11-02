@@ -1,27 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>»∏ø¯∞°¿‘</title>
+		<title>ÌöåÏõêÍ∞ÄÏûÖ</title>
 	</head>
     <body>
         <div>
-            <form action="#">
-                email:<input type="text" id="email"><br>
-                pw:<input type="text" id="pw"><br>
-                pw confirm:<input type="text" id="pwconfirm"><br>
-                name:<input type="text" id="name"><br>
-                sex:<input type="checkbox" name="sex" value="≥≤º∫">≥≤º∫
-                     <input type="checkbox" name="sex" value="ø©º∫">ø©º∫<br>
-                type:<input type="checkbox" name="type" value="∞®µ∂">∞®µ∂
-                     <input type="checkbox" name="type" value="∞®µ∂">πËøÏ<br>
-                phone:<input type="text" id="phone"><br>
-                birth:<input type="text" id="birth"><br>
-                height:<input type="text" id="height"><br>
-                weight:<input type="text" id="weight"><br>
-                <input type="submit" value="»∏ø¯∞°¿‘">
+            <form action="join.do">
+                email:<input type="text" name="email"><br>
+                pw:<input type="text" name="pw"><br>
+                pw confirm:<input type="text" name="pwconfirm"><br>
+                name:<input type="text" name="name"><br>
+                sex:<input type="checkbox" name="sex" value="ÎÇ®ÏÑ±">ÎÇ®ÏÑ±
+                     <input type="checkbox" name="sex" value="Ïó¨ÏÑ±">Ïó¨ÏÑ±<br>
+                type:<input type="checkbox" name="type" value="Í∞êÎèÖ">Í∞êÎèÖ
+                     <input type="checkbox" name="type" value="Í∞êÎèÖ">Î∞∞Ïö∞<br>
+                phone:<input type="text" name="phone"><br>
+                birth:<input type="text" name="birth"><br>
+                height:<input type="text" name="height"><br>
+                weight:<input type="text" name="weight"><br>
+                <input type="submit" value="ÌöåÏõêÍ∞ÄÏûÖ">
              </form>
         </div>
     </body>

@@ -30,9 +30,10 @@ public class MemberDAO {
 			pstmt.setString(4,mdto.getmType());
 			pstmt.setString(5,mdto.getMimage());
 			pstmt.setString(6,mdto.getBirth());
-			pstmt.setInt(7,mdto.getHeight());
-			pstmt.setInt(8,mdto.getWeight());
+			pstmt.setString(7,mdto.getHeight());
+			pstmt.setString(8,mdto.getWeight());
 			pstmt.setString(9,mdto.getPhone());
+			
 			pstmt.executeUpdate();
 			
 			pstmt.close();
@@ -61,8 +62,8 @@ public class MemberDAO {
 				mdto.setmType(rs.getString("mtype"));
 				mdto.setMimage(rs.getString("mimage"));
 				mdto.setBirth(rs.getString("birth"));
-				mdto.setHeight(rs.getInt("height"));
-				mdto.setWeight(rs.getInt("weight"));
+				mdto.setHeight(rs.getString("height"));
+				mdto.setWeight(rs.getString("weight"));
 				mdto.setPhone(rs.getString("phone"));
 			}
 			

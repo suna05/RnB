@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
@@ -23,10 +23,10 @@
             <div class="nav-bar">
                 <ul class="catalog">
                     <li>
-                        <a href="login.jsp">LOGIN</a></li>
+                        <a href="loginPage.do">LOGIN</a></li>
 
                     <li>
-                        <a href="join.jsp">JOIN</a></li>
+                        <a href="joinPage.do">JOIN</a></li>
                 </ul>
             </div>
         </div>

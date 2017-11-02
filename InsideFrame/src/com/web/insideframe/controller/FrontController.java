@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.web.insideframe.command.*;
 
+
 /**
  * Servlet implementation class FrontController
  */
@@ -30,7 +31,7 @@ public class FrontController extends HttpServlet {
 		commandAction(request,response);
 	}
 	private void commandAction(HttpServletRequest request,HttpServletResponse response) throws  ServletException,IOException{
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 		
 		String viewPage=null; //요청에 대한 응답을 받을 페이지
 		Command command=null; //로직수행을 위한 command생성자
@@ -38,8 +39,11 @@ public class FrontController extends HttpServlet {
 		String uri=request.getRequestURI();
 		String conPath=request.getContextPath();
 		String comName=uri.substring(conPath.length());
-		
-		if(comName.equals("/join.do")){
+		if(comName.equals("/JSP/join.do")){
+			command=new JoinCommand();
+			command.execute(request, response);
+			viewPage="joinOk.jsp";
+		}else if(comName.equals("/JSP/joinPage.do")){
 			viewPage="join.jsp";
 		}
 		

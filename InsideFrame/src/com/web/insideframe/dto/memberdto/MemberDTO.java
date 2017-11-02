@@ -6,16 +6,16 @@ public class MemberDTO {
 	private String name;
 	private String mType;
 	private int admin=0;
-	private String mimage;
+	private String mimage="";
 	private String birth;
-	private int height;
-	private int weight;
+	private String height;
+	private String weight;
 	private String phone;
 	private String sex;
 	
 	public MemberDTO(){}
 	
-	public MemberDTO(String email, String pw, String name, String mType, String birth, int height, int weight,
+	public MemberDTO(String email, String pw, String name, String mType, String birth, String height, String weight,
 			String phone,String sex) {
 		super();
 		this.email = email;
@@ -29,8 +29,8 @@ public class MemberDTO {
 		this.sex=sex;
 	}
 	
-	public MemberDTO(String email, String pw, String name, String mType, String mimage, String birth, int height,
-			int weight, String phone,String sex) {
+	public MemberDTO(String email, String pw, String name, String mType, String mimage, String birth, String height,
+			String weight, String phone,String sex) {
 		super();
 		this.email = email;
 		this.pw = pw;
@@ -45,7 +45,7 @@ public class MemberDTO {
 	}
 	
 	public MemberDTO(String email, String pw, String name, String mType, int admin, String mimage, String birth,
-			int height, int weight, String phone,String sex) {
+			String height, String weight, String phone,String sex) {
 		super();
 		this.email = email;
 		this.pw = pw;
@@ -102,16 +102,16 @@ public class MemberDTO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public int getHeight() {
+	public String getHeight() {
 		return height;
 	}
-	public void setHeight(int height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
-	public int getWeight() {
+	public String getWeight() {
 		return weight;
 	}
-	public void setWeight(int weight) {
+	public void setWeight(String weight) {
 		this.weight = weight;
 	}
 	public String getPhone() {
@@ -127,6 +127,13 @@ public class MemberDTO {
 
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberDTO [email=" + email + ", pw=" + pw + ", name=" + name + ", mType=" + mType + ", admin=" + admin
+				+ ", mimage=" + mimage + ", birth=" + birth + ", height=" + height + ", weight=" + weight + ", phone="
+				+ phone + ", sex=" + sex + "]";
 	}
 	
 }

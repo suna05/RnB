@@ -18,13 +18,14 @@ public class JoinCommand implements Command {
 		String mType=request.getParameter("type");
 		String phone=request.getParameter("phone");
 		String birth=request.getParameter("birth");
-		int height=Integer.parseInt(request.getParameter("height"));
-		int weight=Integer.parseInt(request.getParameter("weight"));
-		
+		String height=request.getParameter("height");
+		String weight=request.getParameter("weight");
 		MemberDTO mdto=new MemberDTO(email, pw, name, mType, birth, height, weight, phone, sex);
-		
+		System.out.println(mdto.toString());
 		JoinService js=new JoinService();
-		js.memberInsert(mdto);
+		if(js.memberInsert(mdto)){
+			request.setAttribute("member",mdto);
+		}
 	}
 
 }
