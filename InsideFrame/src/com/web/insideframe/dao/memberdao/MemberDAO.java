@@ -22,7 +22,7 @@ public class MemberDAO {
 		try {
 			Connection conn=connection.getConnetion();
 			
-			pstmt=conn.prepareStatement("insert into member(email,pw,name,mtype,mimage,birth,height,weight,phone) values(?,?,?,?,?,?,?,?,?)");
+			pstmt=conn.prepareStatement("insert into member(email,pw,name,mtype,mimage,birth,height,weight,phone,sex) values(?,?,?,?,?,?,?,?,?,?)");
 			
 			pstmt.setString(1,mdto.getEmail());
 			pstmt.setString(2,mdto.getPw());
@@ -33,6 +33,7 @@ public class MemberDAO {
 			pstmt.setString(7,mdto.getHeight());
 			pstmt.setString(8,mdto.getWeight());
 			pstmt.setString(9,mdto.getPhone());
+			pstmt.setString(10, mdto.getSex());
 			
 			pstmt.executeUpdate();
 			
@@ -65,6 +66,7 @@ public class MemberDAO {
 				mdto.setHeight(rs.getString("height"));
 				mdto.setWeight(rs.getString("weight"));
 				mdto.setPhone(rs.getString("phone"));
+				mdto.setSex(rs.getString("sex"));
 			}
 			
 			rs.close();
@@ -105,6 +107,24 @@ public class MemberDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("MemberDAO delete fail");
+		}
+	}
+	public void update(String email,String pw,String name,String phone){
+		try {
+			Connection conn=connection.getConnetion();
+			PreparedStatement pstmt=conn.prepareStatement("update member set pw=?,name=?,phone=? where email=?");
+			pstmt.setString(1,pw);
+			pstmt.setString(2,name);
+			pstmt.setString(3,phone);
+			pstmt.setString(4,email);
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("MemberDAO update fail");
 		}
 	}
 }

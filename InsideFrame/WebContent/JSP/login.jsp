@@ -12,7 +12,7 @@
     </head>
     <body>
         <div>
-            <form action="login.do">
+            <form action="login.do"  method="post">
                 email:<input type="text" name="email"><br>
                 pw:<input type="password" name="pw"><br>                
                 <input type="submit" value="·Î±×ÀÎ">

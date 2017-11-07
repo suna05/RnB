@@ -8,7 +8,7 @@
 	</head>
     <body>
         <div>
-            <form action="join.do">
+            <form action="join.do" method="post">
                 email:<input type="email" name="email"><br>
                 pw:<input type="password" name="pw"><br>
                 pw confirm:<input type="password" name="pwconfirm"><br>
@@ -16,7 +16,7 @@
                 sex:<input type="radio" name="sex" value="남성">남성
                      <input type="radio" name="sex" value="여성">여성<br>
                 type:<input type="radio" name="type" value="감독">감독
-                     <input type="radio" name="type" value="감독">배우<br>
+                     <input type="radio" name="type" value="배우">배우<br>
                 phone:<input type="text" name="phone"><br>
                 birth:<input type="text" name="birth"><br>
                 height:<input type="text" name="height"><br>

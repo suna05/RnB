@@ -1,85 +1,158 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>INSIDEFRAME STUDIO</title>
+	 
     <link rel="stylesheet" href="../CSS/index.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <title>INSIDEFRAME STUDIO</title>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <!-- jQuery library -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#nav-bar").click(function() {
+                $("#menu").fadeToggle();
+            });
+        });
+    </script>
+    
 </head>
-
 <body>
-    <div id="navigater">
-        <div class="navi">
-            <div class="nav-bar">
-                <ul class="catalog">
-                	<c:choose>
-                        <c:when test="${sessionScope.member!=null }">
-                            <li>
-                      		  <a href="mypage.do">${sessionScope.member.name}</a></li>
-
-                   			<li>
-                        	  <a href="logout.do">LOGOUT</a></li>
-                        </c:when>
-                        <c:otherwise>                            
-                            <li>
-                      		  <a href="loginPage.do">LOGIN</a></li>
-
-                   			<li>
-                        	  <a href="joinPage.do">JOIN</a></li>
-                        </c:otherwise>
-                        </c:choose>
-                </ul>
+   <header id="header">
+        <nav>
+            <div id="nav-logo">
+                <a href="#">
+                    <h1>INSIDEFRAME</h1>
+                </a>
             </div>
-        </div>
-    </div>
+            <div id="nav-bar">
+                <a href="#">
+                    <i class="fa fa-bars"></i>
+                    </a>
+            </div>
+        </nav>
+    </header>
+
+    <menu id="menu">
+        <nav>
+            <li>LOOK FOR</li>
+            <li class="look">
+                <a class="mlist" href="#">DIRECTOR</a>
+            </li>
+            <li class="look">
+                <a class="mlist" href="#">ACTOR</a>
+            </li>
+            <li class="look">
+                <a class="mlist" href="#">NOTICE</a>
+            </li>
+
+            <li class="login">
+                <a class="mlist2" href="#">LOGIN</a>
+                <a class="mlist2" href="#">JOIN</a>
+            </li>
+        </nav>
+    </menu>
 
     <div id="carousel">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
             </ol>
+
+            <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="../photo/carousel_4.jpg" alt="First slide">
+
+                <div class="item active">
+                    <img class="d-block w-100" src="../photo/carousel_4.jpg" alt="first slide">
+                    <div class="carousel-caption">
+                        <h3>Inside Frame</h3>
+                        <p>Thank you, I love HODOO!</p>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="../photo/carousel_5.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="../photo/carousel_7.jpg" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="../photo/carousel_6.jpg" alt="Third slide">
+
+                <div class="item">
+                    <img class="d-block w-100" src="../photo/carousel_1.jpg" alt="second slide">
+                    <div class="carousel-caption">
+                        <h3>Inside Frame</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
 
     <div id="contents">
-       
         <div class="contents1">
+            <div class="films-title">
+                <h2>BEST FILMES of INSIDEFRAME STUDIO.</h2>
+            </div>
+            <div class="films-area">
+                <div class="films">
+                    <a href="#" class="film opacity">
+                            <img src="../photo/photo_1.jpeg" alt="">
+                        </a>
+
+                    <a href="#" class="film">
+                            <img src="../photo/photo_2.jpeg" alt="">
+                    </a>
+
+                    <a href="#" class="film">
+                            <img src="../photo/photo_3.jpeg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contents2">
+            <div class="search-title">
+                <div class="title">
+                    <h2>SEARCHING ACTOR</h2>
+                </div>
+                <div class="title">
+                    <h2>SEARCHING DIRECTOR</h2>
+                </div>
+                <div class="title">
+                    <h2>NOTICE</h2>
+                </div>
+            </div>
+            <div class="search-area">
+                <div class="search">
+
+                </div>
+                <div class="search">
+
+                </div>
+                <div class="search">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="contents3">
             <div class="films-title">
                 <h2>BEST FILMES of INSIDEFRAME STUDIO.</h2>
             </div>
@@ -99,36 +172,6 @@
                 </div>
             </div>
         </div>
-        <div class="contents2">
-            <div class="find-area">
-                <div class="find">
-                   <img src="../photo/find_1.jpg" alt="">
-                </div>
-                <div class="find">
-                    <img src="../photo/find_2.jpeg" alt="">
-                </div>
-            </div>
-            <div class="find-area">
-               <img class="competition" src="../photo/find_3.png" alt="">
-            </div>
-        </div>
-
-       
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   </body>
-
+</body>
 </html>

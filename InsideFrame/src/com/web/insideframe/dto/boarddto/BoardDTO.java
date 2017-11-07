@@ -1,6 +1,7 @@
 package com.web.insideframe.dto.boarddto;
 
 public class BoardDTO {
+	private int rowNo;
 	private int idx;
 	private String writer;
 	private String btitle;
@@ -30,6 +31,26 @@ public class BoardDTO {
 		this.bcount = bcount;
 	}
 	
+	public BoardDTO(int rowNo,int idx, String writer, String btitle, String bdate, String btype, String content, int bcount) {
+		super();
+		this.rowNo=rowNo;
+		this.idx = idx;
+		this.writer = writer;
+		this.btitle = btitle;
+		this.bdate = bdate;
+		this.btype = btype;
+		this.content = content;
+		this.bcount = bcount;
+	}
+	
+	public int getRowNo() {
+		return rowNo;
+	}
+
+	public void setRowNo(int rowNo) {
+		this.rowNo = rowNo;
+	}
+
 	public int getIdx() {
 		return idx;
 	}
@@ -71,5 +92,10 @@ public class BoardDTO {
 	}
 	public void setBcount(int bcount) {
 		this.bcount = bcount;
+	}
+	
+	public String toString(){
+		String str=rowNo+" "+idx+" "+writer+" "+btitle+" "+bdate+" "+btype+" "+content+" "+bcount;
+		return str;
 	}
 }

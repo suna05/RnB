@@ -3,71 +3,115 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-div, ul, li, h2{
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+menu, nav, div, ul, li, h2{
     display: block;
     margin: 0;
     padding: 0;
 }
+ul, li, menu{
+    list-style: none;
+}
 
 
-#navigater {
+#header{
     position: fixed;
     width: 100%;
-    height: 80px;
-    z-index: 1;
-    background-image: url(../photo/slate_1.png);
-    background-size: 100% 80px;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    opacity: 0.7;
+    z-index: 9999;
+    top: 0;
+    padding: 15px 35px 0 35px;
 }
-.nav-bar{
-    float: right;
-    margin-top: 50px;
+
+
+nav{
+    display: block;
 }
-.catalog{
+
+#nav-logo{
     float: left;
-    list-style: none;
-    display: inline-block;
 }
-.catalog li{
-
-    display: inline-block;
-
-}
-.catalog li a{
+#nav-logo h1{
     color: #fff;
+    font-size: 18pt !important;
+    display: inline;
+    font: 13pt 'gt_walsheimthin' !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4pt !important;
+}
+#nav-logo a:hover{
     text-decoration: none;
-    padding-right: 10px;
 }
 
 
-
-
-
-
-
-.carousel-inner{
-	height: 600px;
+#nav-bar{
+    float: right;
 }
-    
-.carousel-inner img{
-	width: 100%;
-    height: 600px;
-    overflow: hidden;
+.fa-bars:before {
+    color: #fff;
 }
 
+#menu{
+    position: fixed;
+    z-index: 9998;
+    width: 100%;
+    top: 0;
+    padding-top: 55px;
+    transition: all 0.7s ease-out;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0.9);
+    display: none;
+}
 
+#menu li{
+    padding: 4px;
+    font-size: 17px;
+}
+#menu a{
+    color: #555;
+}
+.mlist{
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    font: 10pt 'gt_walsheimthin' !important;
+}
+.login{
+    padding: 20px 0 20px 0 !important;
+}
+.mlist2{
+    font-size: 14px;
+    padding: 0 10px 0 10px ;
+}
 
-
-
-
-
+.carousel-caption{
+    bottom: 50%;
+}
+#movedown{
+    z-index: 1;
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    left:0;
+    right:0;
+    bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+#movedown img{
+    width: 100%;
+}
 
 #contents{
+    
+}
+.contents1{
+    padding-bottom: 15px;
     background-color: black;
 }
-
 .films-title{
     width: 100%;
     border-bottom: 3px solid #fff;
@@ -76,49 +120,84 @@ div, ul, li, h2{
     width: 650px;
     margin: 0 20px 0;
     padding-top: 15px;
-    font: 2.0em 'Nanum Gothic', sans-serif;
+    font: 20pt 'gt_walsheimthin' !important;
+    letter-spacing: 1pt !important;
     font-weight: bold;
     color: #fff;
     position: relative
 }
-.films{
+.films{   
     width: 100%;
-    height: 350px;    
     background-image: url(../photo/viedo_film.png);
-    background-size: 100% 350px;
+    background-size: 100% 100%;
     overflow: hidden;
     border-bottom: 3px solid #fff;
 }
 .film{
     float: left;
     position: relative;
-    margin-top: 25px;
+    margin: 25px 0;
     width: 33.33%;
-    height: 300px;
+    opacity: 0.4;
 }
-.film iframe{
+.film:hover{
+    opacity: 1;
+}
+
+
+.film img{
+    width: 100%;
+    height: 100%;
+    opacity: 40;
+}
+
+
+.films iframe{
     width: 100%;
     height: 100%;
 }
 
+.contents2{
+ 
+}
+        
+.search-title{
+    width: 100%;    
+}
+.title{
+    float: left;
+    width: 33.3%;
+    height: 100%;
+    border-bottom: 3px solid #fff;
+}
+.title h2{
+    margin: 0 20px 0;
+    padding-top: 15px;
+    font: 2.0em 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    color: black;
+}
 
-.find-area{
-    display: inline-block;
-    width: 48.81%;
-    margin: 0 auto;
+.search-area{
+    width: 100%;
     height: 200px;
 }
-.find{
+.search{
+    float: left;
+    width: 33.3%;
+    height: 100%;
+}
+.search-b{
+    border-right: 3px solid #fff;
+    border-left: 1px solid #fff;
+}
 
-    width: 100%;
-    height: 100px;
+#footer{
+    background-color:dimgrey;
+    color: #fff;
+    height: 105px;
+    padding-top: 15px;
+    text-align: center;
 }
-.find img{
-    width: 100%;
-    height: 100%;
-}
-.competition{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 100px;
-}
+
+

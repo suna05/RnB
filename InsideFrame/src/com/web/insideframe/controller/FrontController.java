@@ -39,6 +39,7 @@ public class FrontController extends HttpServlet {
 		String uri=request.getRequestURI();
 		String conPath=request.getContextPath();
 		String comName=uri.substring(conPath.length());
+		
 		if(comName.equals("/JSP/join.do")){
 			command=new JoinCommand();
 			command.execute(request, response);
@@ -47,6 +48,8 @@ public class FrontController extends HttpServlet {
 			viewPage="join.jsp";
 		}else if(comName.equals("/JSP/loginPage.do")){
 			viewPage="login.jsp";
+		}else if(comName.equals("/JSP/index.do")){
+			viewPage="index.jsp";
 		}else if(comName.equals("/JSP/login.do")){
 			command=new LoginCommand();
 			command.execute(request, response);
@@ -55,6 +58,18 @@ public class FrontController extends HttpServlet {
 			command=new LogoutCommand();
 			command.execute(request, response);
 			viewPage="index.jsp";
+		}else if(comName.equals("/JSP/profilePage.do")){
+			command=new ProfileCommand();
+			command.execute(request, response);
+			viewPage="profile.jsp";
+		}else if(comName.equals("/JSP/profilealter.do")){
+			command=new ProfileAlterCommand();
+			command.execute(request, response);
+			viewPage="index.jsp";
+		}else if(comName.equals("/JSP/boardlist.do")){
+			command=new BoardListCommand();
+			command.execute(request, response);
+			viewPage="boardList.jsp";
 		}
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);
