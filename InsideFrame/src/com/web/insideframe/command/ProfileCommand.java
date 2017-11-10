@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.web.insideframe.dto.memberdto.MemberDTO;
-import com.web.insideframe.service.memberservice.ProfileService;
+import com.web.insideframe.service.ProfileService;
 
 public class ProfileCommand implements Command {
 

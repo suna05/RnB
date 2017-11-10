@@ -109,13 +109,13 @@ public class MemberDAO {
 			System.out.println("MemberDAO delete fail");
 		}
 	}
-	public void update(String email,String pw,String name,String phone){
+	public void update(String email,String pw,String phone,String mimage){
 		try {
 			Connection conn=connection.getConnetion();
-			PreparedStatement pstmt=conn.prepareStatement("update member set pw=?,name=?,phone=? where email=?");
+			PreparedStatement pstmt=conn.prepareStatement("update member set pw=?,phone=?,mimage=? where email=?");
 			pstmt.setString(1,pw);
-			pstmt.setString(2,name);
-			pstmt.setString(3,phone);
+			pstmt.setString(2,phone);
+			pstmt.setString(3,mimage);
 			pstmt.setString(4,email);
 			pstmt.executeUpdate();
 			

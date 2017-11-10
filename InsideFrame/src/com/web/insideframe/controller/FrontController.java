@@ -70,6 +70,30 @@ public class FrontController extends HttpServlet {
 			command=new BoardListCommand();
 			command.execute(request, response);
 			viewPage="boardList.jsp";
+		}else if(comName.equals("/JSP/boardDetailView.do")){
+			command=new BoardDetailViewCommand();
+			command.execute(request, response);
+			viewPage="boardDetailView.jsp";
+		}else if(comName.equals("/JSP/reply.do")){
+			command=new ReplyCommand();
+			command.execute(request, response);
+			viewPage="boardDetailView.do?idx="+request.getParameter("comment_board")+"&commentPage=1";
+		}else if(comName.equals("/JSP/cinemaSearchPage.do")){
+			command=new CinemaSearchCommand();
+			command.execute(request, response);
+			viewPage="cinemaSearch.jsp?";
+		}else if(comName.equals("/JSP/cinemaSearch.do")){
+			command=new CinemaSearchCommand();
+			command.execute(request, response);
+			viewPage="cinemaSearch.jsp";
+		}else if(comName.equals("/JSP/movieDetailView.do")){
+			command=new MovieDetailViewCommand();
+			command.execute(request, response);
+			viewPage="movieDetailView.jsp";
+		}else if(comName.equals("/JSP/movieReply.do")){
+			command=new MovieReplyCommand();
+			command.execute(request, response);
+			viewPage="movieDetailView.do?movieno="+request.getParameter("movieno")+"&commentPage=1";
 		}
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);

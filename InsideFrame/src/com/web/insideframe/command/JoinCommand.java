@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.web.insideframe.dto.memberdto.MemberDTO;
-import com.web.insideframe.service.memberservice.JoinService;
+import com.web.insideframe.service.JoinService;
 
 public class JoinCommand implements Command {
 

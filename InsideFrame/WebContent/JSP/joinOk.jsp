@@ -8,5 +8,6 @@
 </head>
 <body>
 	${member.name}님의 회원가입을 축하드립니다.
+	<a href="index.do">메인화면으로</a>
 </body>
 </html>

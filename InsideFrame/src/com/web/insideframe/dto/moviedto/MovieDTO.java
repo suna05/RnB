@@ -5,29 +5,52 @@ public class MovieDTO {
 	private String mTitle;
 	private String movieImage;
 	private String director;
-	private String actor;
 	private String youtubeLink;
 	private String category;
 	private String mdate;
+	private String movieInfo;
 	private int like;
 	private int mcount;
 	
 	public MovieDTO() {}
 	
-	public MovieDTO(int movieNo, String mTitle, String movieImage, String director, String actor, String youtubeLink,
+	public MovieDTO(int movieNo, String mTitle, String movieImage, String director, String youtubeLink,
 			String category, String mdate, int like, int mcount) {
 		super();
 		this.movieNo = movieNo;
 		this.mTitle = mTitle;
 		this.movieImage = movieImage;
 		this.director = director;
-		this.actor = actor;
 		this.youtubeLink = youtubeLink;
 		this.category = category;
 		this.mdate = mdate;
 		this.like = like;
 		this.mcount = mcount;
 	}
+	
+	public MovieDTO(int movieNo, String mTitle, String movieImage, String director, String youtubeLink, String category,
+			String mdate, String movieInfo, int like, int mcount) {
+		super();
+		this.movieNo = movieNo;
+		this.mTitle = mTitle;
+		this.movieImage = movieImage;
+		this.director = director;
+		this.youtubeLink = youtubeLink;
+		this.category = category;
+		this.mdate = mdate;
+		this.movieInfo = movieInfo;
+		this.like = like;
+		this.mcount = mcount;
+	}
+
+	public String getMovieInfo() {
+		return movieInfo;
+	}
+
+	public void setMovieInfo(String movieInfo) {
+		this.movieInfo = movieInfo;
+	}
+
 	public int getMovieNo() {
 		return movieNo;
 	}
@@ -51,12 +74,6 @@ public class MovieDTO {
 	}
 	public void setDirector(String director) {
 		this.director = director;
-	}
-	public String getActor() {
-		return actor;
-	}
-	public void setActor(String actor) {
-		this.actor = actor;
 	}
 	public String getYoutubeLink() {
 		return youtubeLink;
@@ -89,5 +106,7 @@ public class MovieDTO {
 		this.mcount = count;
 	}
 	
-	
+	public String toString(){
+		return movieNo+" "+mTitle+" "+director;
+	}
 }

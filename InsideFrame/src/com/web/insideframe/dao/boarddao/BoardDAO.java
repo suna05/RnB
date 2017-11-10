@@ -53,7 +53,7 @@ public class BoardDAO {
 			
 			while(rs.next()){
 				if(rs.getInt("NO")>=startRow && rs.getInt("NO")<= endRow){
-					bdto=new BoardDTO(rs.getInt("NO"),rs.getInt("idx"),rs.getString("writer"),
+					bdto=new BoardDTO(rs.getInt("idx"),rs.getString("writer"),
 							rs.getString("btitle"),rs.getString("bdate"),
 							rs.getString("btype"),rs.getString("content"),rs.getInt("bcount"));
 					blist.add(bdto);
@@ -64,5 +64,25 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return blist;
+	}
+	public BoardDTO select(int idx){
+		BoardDTO bdto=null;
+		try {
+			Connection conn=connection.getConnetion();
+			pstmt=conn.prepareStatement("select * from board where idx=?");
+			
+			pstmt.setInt(1,idx);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()){
+					bdto=new BoardDTO(rs.getInt("idx"),rs.getString("writer"),
+							rs.getString("btitle"),rs.getString("bdate"),
+							rs.getString("btype"),rs.getString("content"),rs.getInt("bcount"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bdto;
 	}
 }

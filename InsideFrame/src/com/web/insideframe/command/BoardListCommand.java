@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.web.insideframe.dto.boarddto.BoardDTO;
 import com.web.insideframe.paging.Paging;
-import com.web.insideframe.service.memberservice.PagingService;
+import com.web.insideframe.service.PagingService;
 
 public class BoardListCommand implements Command {
 
@@ -16,7 +16,7 @@ public class BoardListCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		int curPage=Integer.parseInt(request.getParameter("page")); //현재 페이지번호
-
+		
 		PagingService ps=new PagingService();
 		Paging pg=ps.paging(); //페이징부분 로직수행 후 paging 객체 받아오기
 		

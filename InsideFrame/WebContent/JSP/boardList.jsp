@@ -13,6 +13,7 @@
             <tr>
                 <th scope="cols">번호</th>
                 <th scope="cols">타이틀</th>
+                <th scope="cols">카테고리</th>
                 <th scope="cols">작성일</th>
                 <th scope="cols">작성자</th>
                 <th scope="cols">조회수</th>
@@ -22,7 +23,8 @@
             <c:forEach var="board" items="${boardlist }">
             	<tr>
 	                <td scope="row">${board.idx }</td>
-	                <td class="title"><a href="#">${board.btitle }</a></td>
+	                <td class="title"><a href="boardDetailView.do?idx=${board.idx }&commentPage=1">${board.btitle }</a></td>
+	                <td>${board.btype }</td>
 	                <td>${board.bdate }</td>
 	                <td>${board.writer }</td>
 	                <td>${board.bcount }</td>
@@ -42,7 +44,7 @@
         	<a href="boardlist.do?page=${i }">${i }</a>
         </c:forEach>
         <c:choose>
-        	<c:when test="${param.page ==paging.finalPageNo }">
+        	<c:when test="${param.page ==paging.endPageNo }">
         		<a href="boardlist.do?page=${param.page }">다음</a>
         	</c:when>
         	<c:otherwise>

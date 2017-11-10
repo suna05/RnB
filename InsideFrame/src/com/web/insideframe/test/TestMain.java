@@ -7,9 +7,9 @@ import static org.hamcrest.CoreMatchers.is;
 import com.web.insideframe.common.*;
 import com.web.insideframe.dao.memberdao.MemberDAO;
 import com.web.insideframe.dto.memberdto.*;
-import com.web.insideframe.service.memberservice.JoinService;
-import com.web.insideframe.service.memberservice.LoginService;
-import com.web.insideframe.service.memberservice.WithdrawalService;
+import com.web.insideframe.service.JoinService;
+import com.web.insideframe.service.LoginService;
+import com.web.insideframe.service.WithdrawalService;
 
 public class TestMain {
 	@Test
