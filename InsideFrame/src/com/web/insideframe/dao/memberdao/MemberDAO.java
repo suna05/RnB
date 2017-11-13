@@ -22,7 +22,7 @@ public class MemberDAO {
 		try {
 			Connection conn=connection.getConnetion();
 			
-			pstmt=conn.prepareStatement("insert into member(email,pw,name,mtype,mimage,birth,height,weight,phone,sex) values(?,?,?,?,?,?,?,?,?,?)");
+			pstmt=conn.prepareStatement("insert into member(email,pw,name,mtype,mimage,birth,phone,sex) values(?,?,?,?,?,?,?,?)");
 			
 			pstmt.setString(1,mdto.getEmail());
 			pstmt.setString(2,mdto.getPw());
@@ -30,10 +30,8 @@ public class MemberDAO {
 			pstmt.setString(4,mdto.getmType());
 			pstmt.setString(5,mdto.getMimage());
 			pstmt.setString(6,mdto.getBirth());
-			pstmt.setString(7,mdto.getHeight());
-			pstmt.setString(8,mdto.getWeight());
-			pstmt.setString(9,mdto.getPhone());
-			pstmt.setString(10, mdto.getSex());
+			pstmt.setString(7,mdto.getPhone());
+			pstmt.setString(8, mdto.getSex());
 			
 			pstmt.executeUpdate();
 			

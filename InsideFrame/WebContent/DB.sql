@@ -4,6 +4,7 @@ select * from movieno_comment;
 select * from CAREER
 select rownum NO,idx,writer,btitle,bdate,btype,content,bcount from board order by COMMENTNO desc;
 select * from board_comment;
+delete board_comment where commentno=48;
 select rownum NO,commentno,comment_board,commentid,commentdate,commentcontent from board_comment where comment_board=28 order by commentno desc;
 insert into member(email,pw,name,mtype) values('ysung1223@nate.com','1234','여성','감독');
 insert into member(email,pw,name,mtype) values('','1234','여성','감독');

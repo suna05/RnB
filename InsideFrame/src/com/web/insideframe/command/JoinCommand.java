@@ -18,10 +18,7 @@ public class JoinCommand implements Command {
 		String mType=request.getParameter("type");
 		String phone=request.getParameter("phone");
 		String birth=request.getParameter("birth");
-		String height=request.getParameter("height");
-		String weight=request.getParameter("weight");
-		MemberDTO mdto=new MemberDTO(email, pw, name, mType, birth, height, weight, phone, sex);
-		System.out.println(mdto.toString());
+		MemberDTO mdto=new MemberDTO(email, pw, name, mType, birth, phone, sex);
 		JoinService js=new JoinService();
 		if(js.memberInsert(mdto)){
 			request.setAttribute("member",mdto);

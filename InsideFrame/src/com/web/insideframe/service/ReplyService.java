@@ -20,7 +20,6 @@ public class ReplyService {
 		
 		return rdto;
 	}
-	
 	public void insertReply(ReplyDTO rdto){
 		rdao.insert(rdto);
 	}

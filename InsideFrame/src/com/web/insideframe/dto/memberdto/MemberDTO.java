@@ -29,6 +29,17 @@ public class MemberDTO {
 		this.sex=sex;
 	}
 	
+	public MemberDTO(String email, String pw, String name, String mType, String birth, String phone, String sex) {
+		super();
+		this.email = email;
+		this.pw = pw;
+		this.name = name;
+		this.mType = mType;
+		this.birth = birth;
+		this.phone = phone;
+		this.sex = sex;
+	}
+
 	public MemberDTO(String email, String pw, String name, String mType, String mimage, String birth, String height,
 			String weight, String phone,String sex) {
 		super();

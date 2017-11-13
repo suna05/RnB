@@ -1,0 +1,267 @@
+#welcome{
+    margin-top: 53.2px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: orange;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    transition: all 0.7s ease-out;
+}
+.buttonList{
+  margin-top: 40px;
+}
+.buttonList ul{
+   text-align: center;
+}
+.buttonList li{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #eee;
+    border-radius: 3px;
+    color: #555;
+}
+.homeB{
+    margin-right: 40px;
+}
+.homeB:before{
+    content: "\f015";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.loginB:before{
+    content: "\f007";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.buttonList li a{
+    text-decoration: none;
+    color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #fff;
+}
+menu, nav, div, ul, li, h2, h1, p{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+ul, li, menu{
+    list-style: none;
+}
+
+
+#header{
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    padding: 15px 35px 15px 35px;
+    background-color: #4d4d4d;
+}
+
+
+nav{
+    display: block;
+}
+
+#nav-logo{
+    float: left;
+}
+#nav-logo h1{
+    color: #fff;
+    font-size: 18pt !important;
+    display: inline;
+    font: 13pt 'gt_walsheimthin' !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4pt !important;
+    
+}
+#nav-logo a:hover{
+    text-decoration: none;
+}
+#nav-logo a{
+    text-decoration: none;
+}
+#nav-bar{
+    float: right;
+    cursor: pointer;
+    padding-top: 4px;
+}
+.fa-bars:before {
+    color: #fff;
+    content: "\f0c9";
+
+}
+
+
+#menu{
+    position: fixed;
+    z-index: 9998;
+    width: 100%;
+    top: 0;
+    padding-top: 75px;
+    transition: all 0.7s ease-out;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0.9);
+    display: none;
+}
+#menu li{
+    padding: 4px;
+    font-size: 17px;
+}
+#menu a{
+    color: #555;
+    text-decoration: none;
+}
+#menu a:hover{
+    text-decoration:underline;
+}
+.mlist{
+    letter-spacing: 3pt;
+    text-transform: uppercase;
+    font: 10pt 'gt_walsheimthin' !important;
+}
+.login{
+    padding: 20px 0 20px 0 !important;
+}
+.mlist2{
+    font-size: 14px;
+    padding: 0 10px 0 10px ;
+}
+
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    background-color:#4d4d4d;
+    color: grey;
+    font-family: "Chronicle Text G1 A","Chronicle Text G1 B";
+    font-style: normal;
+    font-weight: 400;
+}
+.footer-area{
+    margin: 0 auto;
+    padding: 80px 40px;
+    overflow: hidden;
+}
+.footer-area div{
+    font-size: 13px;
+}
+.aboutus{
+    width: 35%;
+    padding-left: 5%;
+    float: right;
+    color: orange;
+    text-align: right
+}
+.aboutus p{
+    margin-bottom: 30px;
+    color: grey;
+    text-align: right;
+}
+.intro{
+     width: 30%;
+    float: left;
+    overflow: hidden;
+    
+}
+.intro div{
+    float: left;
+    width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "Verlag A","Verlag B";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+}
+.intro span {
+    display: block;
+    margin-bottom: 15px;
+    
+}
+.intro li{
+    list-style-type: none;
+    color: #eee;
+}
+
+
+.footersns{
+    float: left;
+    width: 35%;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    margin: 0;
+    font-family: "Verlag A","Verlag B";
+    font-style: normal;
+    font-weight: 400;
+}
+
+.social{
+    display: block;
+    margin-bottom: 15px;
+}
+.connect{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.connect a{
+    text-decoration: none;
+    color: orange;
+    transform: color 0.2s ease-in-out;
+}
+
+.footersns a {
+    margin-right: 10px;
+}
+.footersns svg path:hover{
+    fill: whitesmoke;
+}
+
+.footersns svg path{
+    fill: grey;
+    opacity: .8;
+    transition: all 0.3s ease-out;
+}
