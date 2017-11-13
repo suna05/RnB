@@ -94,6 +94,8 @@ public class FrontController extends HttpServlet {
 			command=new MovieReplyCommand();
 			command.execute(request, response);
 			viewPage="movieDetailView.do?movieno="+request.getParameter("movieno")+"&commentPage=1";
+		}else if(comName.equals("/JSP/changePasswordPage.do")){
+			viewPage="changePassword.jsp";
 		}
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher(viewPage);

@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <title>My Page</title>
+        <title>Change Password</title>
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script type="text/javascript">
@@ -110,13 +110,13 @@
                             </div>
                         </li>
                         <li class="mypage-nav">My Page</li>
-                        <li class="mypage-nav mypage-info active">
+                        <li class="mypage-nav mypage-info">
                             <a href="profilePage.do">
                               <i class="before1"></i>
                               <span>회원정보 수정</span>
                        </a>
                         </li>
-                        <li class="mypage-nav mypage-info">
+                        <li class="mypage-nav mypage-info active">
                             <a href="changePasswordPage.do">
                           <i class="before2"></i>
                            <span>비밀번호 변경</span>
@@ -131,85 +131,43 @@
             <div id="right-contents">
                 <div class="contents">
                    <div class="infoedit">
-                   <span>회원정보 수정</span>
+                   <span>비밀번호 변경</span>
                    </div>
+                   <br>
+                   <br>
                     <form action="profilealter.do" method="post">
-                        <div class="image-area">
-                            <div class="imagezone">
-                                <img id="blah" src="photo/no-user.jpg" alt="your image"/>
-                            </div>
-                            <div class="imagefile">
-                                <input type='file' id="imgInp" name="mimage"/>
-                            </div>
-                        </div>
                         <div class="Info-area">
+                        	<div class="Info">
+                                <div class="label">
+                                    <label>Now Password</label>
+                                </div>
+                                <input class="block" type="password" name="nowpw">
+                            </div>
+                            <br>
                             <div class="Info">
                                 <div class="label">
-                                    <label>Email</label>
+                                    <label>New Password</label>
                                 </div>
-                                <input class="block" type="email" name="email" disabled value="${member.email }">
+                                <input class="block" type="password" name="newpw">
                             </div>
+                            <br>
                             <div class="Info">
                                 <div class="label">
-                                    <label>Name</label>
+                                    <label>Password Confirm</label>
                                 </div>
-                                <input class="block" type="text" name="name" disabled value="${member.name }">
+                                <input class="block" type="password" name="newpwconfirm">
                             </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Gender</label>
-                                </div>
-                                <input class="block" type="text" name="name" disabled value="${member.sex }">
-                            </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Type</label>
-                                </div>
-                                <input class="block" type="text" name="name" disabled value="${member.mType }">
-                            </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Phone</label>
-                                </div>
-                                <input class="block" type="text" name="phone" value="${member.phone }">
-                            </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Birth</label>
-                                </div>
-                                <input class="block" type="text" name="birth" disabled value="${member.birth }">
-                            </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Height</label>
-                                </div>
-                                <input class="block" type="text" name="height" disabled value="${member.height }cm">
-                            </div>
-                            <div class="Info">
-                                <div class="label">
-                                    <label>Weight</label>
-                                </div>
-                                <input class="block" type="text" name="weight" disabled value="${member.weight }kg">
-                            </div>
-
+                            <br>
+                            <br>
+                            
                             <div class="blockBtn">
-                                <input type="submit" value="회원정보 변경">
+                                <input type="submit" value="비밀번호 변경">
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
         <footer id="footer">
             <div class="footer-area">
                 <div class="footersns">
