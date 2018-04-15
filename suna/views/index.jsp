@@ -78,8 +78,8 @@
 		<h2>Recent Work</h2>
 		<div class="row">
 			<article class="6u 12u$(xsmall) work-item"> <a
-				href="resources/images/fulls/moon.jpg" class="image fit thumb"><img
-				src="resources/images/thumbs/moon.jpg" alt="" /></a>
+				href="resources/images/fulls/foot.png" class="image fit thumb"><img
+				src="resources/images/thumbs/foot.png" alt="" /></a>
 			<h3>월화수목금토일</h3>
 			<p>월화수목금토일월화수목금토일월화수목금토일월화수목금토일월화수목금토일</p>
 			</article>
