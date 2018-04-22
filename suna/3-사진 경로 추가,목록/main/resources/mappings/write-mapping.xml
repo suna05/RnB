@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WriteDAO">
+	<insert id="insertWrite" parameterType="Write">
+		INSERT INTO write VALUES(#{w_no}, #{w_title}, #{w_content}, #{w_writer}, SYSDATE, #{w_count})
+	</insert>
+	
+	<select id="getListWrite" resultType="write">
+		<![CDATA[
+		select * from write
+		]]> 
+	</select>
+	
+	
+	<select id="getDetailWrite"  parameterType="write" resultType="write">
+	<![CDATA[
+		select w_no, w_title, w_content, w_writer, w_date, w_count 
+		from write
+		WHERE SEQ=#{seq}
+		]]> 
+	</select> 
+	
+	
+	
+	
+	
+	
+	
+<!-- 	<update id="updatePhoto" parameterType="member">
+		UPDATE MEMBER SET M_TITLE=#{p_no} where ID=#{p_no}
+	</update>
+	<delete id="deleteMember" parameterType="member">
+		DELETE FROM MEMBER WHERE M_ID=#{m_id}
+	</delete> -->
+	<!-- <select id="getNickNameUser" parameterType="user" resultType="user">
+		SELECT * FROM USERS WHERE NICKNAME=#{nickName}
+	</select> -->
+</mapper>
+	

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PhotoDAO">
+
+<!--  	<resultMap type="photo" id="photoMap">
+		<id column="p_no" property="bdNo" />
+		<result column="p_title" property="photoTitle" />
+		<result column="p_wirter" property="photoWriter" />
+		<result column="p_date" property="photoTitleDate" />
+		<result column="p_count" property="photoCount" />
+		<result column="bp_fullpath" property="photoPath" />
+	</resultMap> -->
+
+
+
+	<insert id="insertPhoto" parameterType="photo" >
+		INSERT INTO PHOTO VALUES(seq_photo.nextval, #{p_title, jdbcType=VARCHAR}, #{p_writer, jdbcType=VARCHAR}, SYSDATE, #{p_count}, #{bp_fullpath, jdbcType=VARCHAR})
+	</insert>
+	
+	<select id="getListPhoto" resultType="photo">
+		<![CDATA[
+		select * from photo
+		]]> 
+	</select>
+<!-- 	<update id="updatePhoto" parameterType="member">
+		UPDATE MEMBER SET M_TITLE=#{p_no} where ID=#{p_no}
+	</update>
+	<delete id="deleteMember" parameterType="member">
+		DELETE FROM MEMBER WHERE M_ID=#{m_id}
+	</delete> -->
+	<!-- <select id="getNickNameUser" parameterType="user" resultType="user">
+		SELECT * FROM USERS WHERE NICKNAME=#{nickName}
+	</select> -->
+</mapper>
+	
