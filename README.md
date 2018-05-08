@@ -4,9 +4,6 @@
 
 [접속주소]
 
-www.rnbjjo.com
-
-rnbjjo.com
 
 윤여성, 최봉근, 임광빈, 신선아
 
