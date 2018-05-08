@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ReplyPhotoDAO">
+
+	<insert id="insertReply" parameterType="replyphoto">
+		INSERT INTO replyPhoto
+		VALUES(seq_replyPhoto.nextval, #{r_writer}, #{r_content} ,SYSDATE,
+		#{p_no})
+	</insert>
+
+	<select id="getListReply" parameterType="int" resultType="replyphoto">
+      <![CDATA[
+      select * from replyPhoto where p_no=#{p_no} ORDER BY R_NO asc
+      ]]>
+	</select>
+
+	<update id="updatePhotoReply" parameterType="replyphoto">
+		update replyPhoto set r_content=#{r_content}
+		where r_no=#{r_no}
+	</update>
+	
+	<delete id="deleteReply" parameterType="replyphoto">
+      DELETE FROM replyPhoto WHERE r_no=#{r_no}
+   </delete>
+	
+</mapper>

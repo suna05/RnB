@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ToDoListDAO">
+	<insert id="insertToDoList" parameterType="todolist">
+		INSERT INTO todolist 
+			(t_content, t_writer, t_no, m_id) 
+		VALUES 
+			(#{t_content}, #{t_writer}, todolist_seq.nextval, #{m_id})
+	</insert>
+	
+	<select id="getToDoList" parameterType="todolist" resultType="todolist">
+		SELECT * FROM todolist WHERE M_ID = #{m_id} ORDER BY t_date DESC, t_no DESC 
+	</select>
+	
+	<update id="completeList" parameterType="todolist">
+		UPDATE todolist SET obtain = 1 WHERE M_ID= #{m_id} AND t_no = #{t_no}
+	</update>
+	
+	<delete id="deleteList" parameterType="todolist">
+		DELETE FROM todolist WHERE t_no = #{t_no}
+	</delete>
+	
+	<select id="getObtainAll" parameterType="todolist" resultType="int">
+		SELECT count(*) FROM todolist WHERE M_ID = #{m_id}
+	</select>
+	
+	<select id="getObtainComplete" parameterType="todolist" resultType="int">
+		SELECT count(obtain) FROM todolist WHERE M_ID = #{m_id} and obtain = 1
+	</select>
+</mapper>

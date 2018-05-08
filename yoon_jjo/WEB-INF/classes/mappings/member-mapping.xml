@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MemberDAO">
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO MEMBER VALUES(#{m_id},#{m_pw},#{m_name},#{m_phone},#{m_birth},#{m_address})
+	</insert>
+	<select id="getMember" parameterType="member" resultType="member">
+		SELECT * FROM MEMBER WHERE M_ID=#{m_id}
+	</select>
+	<update id="updateMember" parameterType="member">
+		UPDATE MEMBER SET M_PW=#{m_pw} where M_ID=#{m_id}
+	</update>
+	<delete id="deleteMember" parameterType="member">
+		DELETE FROM MEMBER WHERE M_ID=#{m_id}
+	</delete>
+	<select id="confirmMember" parameterType="member" resultType="int">
+		SELECT NVL(COUNT(*),0) FROM MEMBER WHERE M_ID=#{m_id}
+	</select>
+	<select id="getListMember" resultType="member">
+		SELECT * FROM MEMBER
+	</select>
+</mapper>
+	

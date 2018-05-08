@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProfilePhotoDAO">
+
+	<insert id="insertProfilePhoto" parameterType="profilephoto">
+		INSERT INTO PROFILEPHOTO VALUES(#{pp_fullpath},#{m_id})
+	</insert>
+	<select id="getProfilePhoto" parameterType="member" resultType="profilephoto">
+		SELECT * FROM PROFILEPHOTO WHERE M_ID=#{m_id}
+	</select>
+	<!-- <update id="updateProfilePhoto"></update> -->
+</mapper>
+	

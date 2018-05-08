@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WriteDAO">
+	<insert id="insertWrite" parameterType="write">
+		INSERT INTO write VALUES(seq_write.nextval, #{w_title}, #{w_content}, #{w_writer}, SYSDATE, #{w_count})
+	</insert>
+	
+	<select id="getListWrite" parameterType="paging" resultType="write">
+		<![CDATA[
+		SELECT *
+        FROM (SELECT ROWNUM RNUM, P.*
+                FROM (  SELECT *
+                        FROM write
+                        ORDER BY W_NO DESC) P )
+        WHERE RNUM BETWEEN #{startColumnNo} AND #{endColumnNo}
+		]]> 
+		
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT COUNT(*) FROM write
+	</select>
+	
+	
+	<select id="getDetailWrite"  parameterType="write" resultType="write">
+	<![CDATA[
+		select *
+		from write
+		WHERE w_no=#{w_no}
+		]]> 
+	</select> 
+	
+	<select id="getListPopular" resultType="write">
+		<![CDATA[
+			SELECT * 
+			FROM (SELECT ROWNUM RNUM,P.* 
+					FROM (SELECT * FROM WRITE ORDER BY W_COUNT DESC) P) WHERE RNUM<=6
+		]]>
+	</select>
+	
+	<update id="updateWrite" parameterType="write">
+		update write set w_title=#{w_title}, w_content=#{w_content}, w_date=SYSDATE
+		where w_no = #{w_no}
+	</update>
+	
+	
+	<delete id="deleteWrite" parameterType="write">
+		DELETE FROM write WHERE w_no=#{w_no}
+	</delete> 
+	
+	<update id="updateCount" parameterType="write">
+		UPDATE WRITE SET W_COUNT=(SELECT W_COUNT FROM WRITE WHERE W_NO=#{w_no})+1 WHERE W_NO=#{w_no}
+	</update>
+	
+	
+</mapper>
+	

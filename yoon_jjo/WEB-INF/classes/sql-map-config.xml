@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- Alias 설정 -->
+	<typeAliases>
+		<typeAlias type="com.web.rnb.member.MemberDTO" alias="member"/>
+		<typeAlias type="com.web.rnb.photo.ProfilePhotoDTO" alias="profilephoto"/>
+		<typeAlias type="com.web.rnb.chat.ChatDTO" alias="chat"/>
+		<typeAlias type="com.web.rnb.todolist.ToDoListDTO" alias="todolist"/>
+		<typeAlias type="com.web.rnb.write.WriteDTO" alias="write"/>
+		<typeAlias type="com.web.rnb.writeimpl.WritePager" alias="paging" />
+		<typeAlias type="com.web.rnb.photo.PhotoDTO" alias="photo"/>
+		<typeAlias type="com.web.rnb.photoimpl.PhotoPager" alias="p_paging"/>
+		<typeAlias type="com.web.rnb.reply.ReplyDTO" alias="reply"/>
+		<typeAlias type="com.web.rnb.reply.ReplyPhotoDTO" alias="replyphoto"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappings/member-mapping.xml"/>
+		<mapper resource="mappings/profilephoto-mapping.xml"/>
+		<mapper resource="mappings/chat-mapping.xml"/>
+		<mapper resource="mappings/todolist-mapping.xml" />
+		<mapper resource="mappings/write-mapping.xml"/>
+		<mapper resource="mappings/photo-mapping.xml"/>
+		<mapper resource="mappings/reply-mapping.xml"/>
+		<mapper resource="mappings/replyPhoto-mapping.xml"/>
+	</mappers>
+</configuration>
